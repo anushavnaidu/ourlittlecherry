@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwyz2guyVQfXMEoxsxDSEtcCRIH9QUdCoypzq-sO9Xtmpx3qvCFKw5NnWUAA_SjKHp-cg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx9otg113CeOARkof67HvQHDOxuwz9KecM0gK1yWKk4GUEL9vg4sqHIxhWXpCfLBs8wQw/exec";
 const EVENT_DATE = new Date("2026-06-13T17:00:00+01:00");
 
 function updateCountdown() {
@@ -31,13 +31,39 @@ function loadResults() {
   document.body.appendChild(script);
 }
 
-function updateResults(data) {
-  document.getElementById("totalVotes").textContent = data.total;
-  document.getElementById("boyPercent").textContent = data.boyPercent + "%";
-  document.getElementById("girlPercent").textContent = data.girlPercent + "%";
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
-  document.getElementById("boyBar").style.width = data.boyPercent + "%";
-  document.getElementById("girlBar").style.width = data.girlPercent + "%";
+function renderNames(elementId, names) {
+  const element = document.getElementById(elementId);
+
+  if (!names || names.length === 0) {
+    element.textContent = "No votes yet";
+    return;
+  }
+
+  element.innerHTML = names
+    .filter(Boolean)
+    .map(name => `<span>${escapeHtml(name)}</span>`)
+    .join("");
+}
+
+function updateResults(data) {
+  document.getElementById("totalVotes").textContent = data.total || 0;
+  document.getElementById("boyPercent").textContent = (data.boyPercent || 0) + "%";
+  document.getElementById("girlPercent").textContent = (data.girlPercent || 0) + "%";
+
+  document.getElementById("boyBar").style.width = (data.boyPercent || 0) + "%";
+  document.getElementById("girlBar").style.width = (data.girlPercent || 0) + "%";
+
+  renderNames("boyNames", data.boyNames || []);
+  renderNames("girlNames", data.girlNames || []);
 }
 
 async function submitVote(vote) {
@@ -65,7 +91,6 @@ async function submitVote(vote) {
 
     message.textContent = `Thank you, ${name}! Your Team ${vote} vote is saved 🍒`;
     document.getElementById("voteName").value = "";
-
     setTimeout(loadResults, 2000);
   } catch (error) {
     message.textContent = "Something went wrong. Please try again.";
@@ -108,7 +133,6 @@ async function submitRSVP(status) {
 function revealOnScroll() {
   document.querySelectorAll(".reveal").forEach((item) => {
     const rect = item.getBoundingClientRect();
-
     if (rect.top < window.innerHeight - 80) {
       item.classList.add("visible");
     }
