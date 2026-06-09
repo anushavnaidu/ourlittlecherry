@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbx9otg113CeOARkof67HvQHDOxuwz9KecM0gK1yWKk4GUEL9vg4sqHIxhWXpCfLBs8wQw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwyz2guyVQfXMEoxsxDSEtcCRIH9QUdCoypzq-sO9Xtmpx3qvCFKw5NnWUAA_SjKHp-cg/exec";
 const EVENT_DATE = new Date("2026-06-13T17:00:00+01:00");
 
 function updateCountdown() {
