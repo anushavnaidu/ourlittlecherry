@@ -4,97 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Little Cherry Is On The Way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="petals" aria-hidden="true"><span>🍒</span><span>🌸</span><span>🍒</span><span>🌸</span><span>🍒</span><span>🌸</span></div>
   <header class="hero">
-    <div class="overlay">
-      <p class="eyebrow">🍒 Gender Reveal Invitation 🍒</p>
-      <h1>Our Little Cherry<br />Is On The Way</h1>
-      <p class="subtitle">Anusha & Akshay invite you to celebrate our little blessing</p>
-
-      <div class="event-card">
-        <p><strong>Saturday, 13 June 2026</strong></p>
-        <p>5:00 PM onwards</p>
-        <p>Runnymede Pleasure Grounds, Egham</p>
+    <nav class="nav"><div class="brand">🍒 Our Little Cherry</div><a href="#rsvp" class="nav-btn">RSVP</a></nav>
+    <section class="hero-content">
+      <div class="badge">Gender Reveal Invitation</div>
+      <h1>Our Little Cherry<br><span>Is On The Way</span></h1>
+      <p class="intro">Anusha & Akshay invite you to celebrate a sweet little secret.</p>
+      <div class="hero-card">
+        <div><small>Date</small><strong>Saturday, 13 June 2026</strong></div>
+        <div><small>Time</small><strong>5:00 PM onwards</strong></div>
+        <div><small>Venue</small><strong>Runnymede Pleasure Grounds</strong></div>
       </div>
-
-      <div class="dress-code">
-        <div class="team blue">🩵 Team Boy<br /><span>Wear Blue</span></div>
-        <div class="team pink">🩷 Team Girl<br /><span>Wear Pink</span></div>
+      <div class="dress">
+        <div class="dress-card boy"><span>🩵</span><h3>Team Boy</h3><p>Wear Blue</p></div>
+        <div class="dress-card girl"><span>🩷</span><h3>Team Girl</h3><p>Wear Pink</p></div>
       </div>
-    </div>
+    </section>
   </header>
-
   <main>
-    <section class="countdown-section">
-      <h2>Countdown to Reveal Day</h2>
-      <div id="countdown" class="countdown">
-        <div><span id="days">0</span><small>Days</small></div>
-        <div><span id="hours">0</span><small>Hours</small></div>
-        <div><span id="minutes">0</span><small>Minutes</small></div>
-        <div><span id="seconds">0</span><small>Seconds</small></div>
-      </div>
-    </section>
-
-    <section class="vote-section">
-      <h2>What's Your Prediction?</h2>
-      <p>Will our little cherry be Team Boy or Team Girl?</p>
-
-      <input id="voteName" type="text" placeholder="Your name" />
-
-      <div class="vote-buttons">
-        <button onclick="submitVote('Boy')" class="boy-btn">🩵 Vote Team Boy</button>
-        <button onclick="submitVote('Girl')" class="girl-btn">🩷 Vote Team Girl</button>
-      </div>
-
-      <p id="voteMessage" class="message"></p>
-
-      <div class="results">
-        <h3>Live Predictions</h3>
-        <p>Total votes: <strong id="totalVotes">0</strong></p>
-
-        <div class="result-row">
-          <span>🩵 Boy <strong id="boyPercent">0%</strong></span>
-          <div class="bar"><div id="boyBar"></div></div>
-        </div>
-
-        <div class="result-row">
-          <span>🩷 Girl <strong id="girlPercent">0%</strong></span>
-          <div class="bar"><div id="girlBar"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="rsvp-section">
-      <h2>RSVP</h2>
-      <p>Let us know how you'll be joining us.</p>
-
-      <input id="rsvpName" type="text" placeholder="Your name" />
-      <input id="guestCount" type="number" min="1" placeholder="Number of guests" />
-
-      <div class="rsvp-buttons">
-        <button onclick="submitRSVP('In Person')">I'll be there in person</button>
-        <button onclick="submitRSVP('Virtual')">I'll join virtually</button>
-        <button onclick="submitRSVP('Can’t attend')">Sending love from afar</button>
-      </div>
-
-      <p id="rsvpMessage" class="message"></p>
-    </section>
-
-    <section class="location-section">
-      <h2>Location</h2>
-      <p>Runnymede Pleasure Grounds, Egham</p>
-      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Runnymede+Pleasure+Grounds+Egham" target="_blank">
-        Open in Google Maps
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <p>Made with love for Baby Cherry 🍒</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <section class="glass-section reveal"><p class="section-kicker">The countdown begins</p><h2>Reveal Day Countdown</h2><div id="countdown" class="countdown"><div><strong id="days">0</strong><span>Days</span></div><div><strong id="hours">0</strong><span>Hours</span></div><div><strong id="minutes">0</strong><span>Minutes</span></div><div><strong id="seconds">0</strong><span>Seconds</span></div></div></section>
+    <section class="glass-section vote-section reveal"><p class="section-kicker">Make your guess</p><h2>What’s Your Prediction?</h2><p class="muted">Will our little cherry be sweet pink or cool blue?</p><div class="form-wrap"><input id="voteName" type="text" placeholder="Enter your name" /><div class="vote-buttons"><button onclick="submitVote('Boy')" class="vote-boy">🩵 Vote Team Boy</button><button onclick="submitVote('Girl')" class="vote-girl">🩷 Vote Team Girl</button></div><p id="voteMessage" class="message"></p></div><div class="live-card"><div class="live-header"><h3>Live Predictions</h3><p><span id="totalVotes">0</span> votes cast</p></div><div class="result"><div class="result-label"><span>🩵 Team Boy</span><strong id="boyPercent">0%</strong></div><div class="bar"><div id="boyBar" class="boy-fill"></div></div></div><div class="result"><div class="result-label"><span>🩷 Team Girl</span><strong id="girlPercent">0%</strong></div><div class="bar"><div id="girlBar" class="girl-fill"></div></div></div></div></section>
+    <section id="rsvp" class="glass-section rsvp-section reveal"><p class="section-kicker">Join the celebration</p><h2>RSVP</h2><p class="muted">Let us know how you’ll be joining us.</p><div class="form-wrap"><input id="rsvpName" type="text" placeholder="Enter your name" /><input id="guestCount" type="number" min="1" placeholder="Number of guests" /><div class="rsvp-buttons"><button onclick="submitRSVP('In Person')">I’ll be there in person</button><button onclick="submitRSVP('Virtual')">I’ll join virtually</button><button onclick="submitRSVP('Can’t attend')">Sending love from afar</button></div><p id="rsvpMessage" class="message"></p></div></section>
+    <section class="glass-section location-section reveal"><p class="section-kicker">Find us here</p><h2>Location</h2><p class="muted">Runnymede Pleasure Grounds, Egham</p><a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Runnymede+Pleasure+Grounds+Egham" target="_blank" rel="noreferrer">Open in Google Maps</a></section>
+  </main><footer><p>Made with love for Baby Cherry 🍒</p></footer><script src="script.js"></script>
+</body></html>
