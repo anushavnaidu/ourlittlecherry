@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Little Cherry Is On The Way</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <p class="eyebrow">🍒 Gender Reveal Invitation 🍒</p>
+      <h1>Our Little Cherry<br />Is On The Way</h1>
+      <p class="subtitle">Anusha & Akshay invite you to celebrate our little blessing</p>
+
+      <div class="event-card">
+        <p><strong>Saturday, 13 June 2026</strong></p>
+        <p>5:00 PM onwards</p>
+        <p>Runnymede Pleasure Grounds, Egham</p>
+      </div>
+
+      <div class="dress-code">
+        <div class="team blue">🩵 Team Boy<br /><span>Wear Blue</span></div>
+        <div class="team pink">🩷 Team Girl<br /><span>Wear Pink</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="countdown-section">
+      <h2>Countdown to Reveal Day</h2>
+      <div id="countdown" class="countdown">
+        <div><span id="days">0</span><small>Days</small></div>
+        <div><span id="hours">0</span><small>Hours</small></div>
+        <div><span id="minutes">0</span><small>Minutes</small></div>
+        <div><span id="seconds">0</span><small>Seconds</small></div>
+      </div>
+    </section>
+
+    <section class="vote-section">
+      <h2>What's Your Prediction?</h2>
+      <p>Will our little cherry be Team Boy or Team Girl?</p>
+
+      <input id="voteName" type="text" placeholder="Your name" />
+
+      <div class="vote-buttons">
+        <button onclick="submitVote('Boy')" class="boy-btn">🩵 Vote Team Boy</button>
+        <button onclick="submitVote('Girl')" class="girl-btn">🩷 Vote Team Girl</button>
+      </div>
+
+      <p id="voteMessage" class="message"></p>
+
+      <div class="results">
+        <h3>Live Predictions</h3>
+        <p>Total votes: <strong id="totalVotes">0</strong></p>
+
+        <div class="result-row">
+          <span>🩵 Boy <strong id="boyPercent">0%</strong></span>
+          <div class="bar"><div id="boyBar"></div></div>
+        </div>
+
+        <div class="result-row">
+          <span>🩷 Girl <strong id="girlPercent">0%</strong></span>
+          <div class="bar"><div id="girlBar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp-section">
+      <h2>RSVP</h2>
+      <p>Let us know how you'll be joining us.</p>
+
+      <input id="rsvpName" type="text" placeholder="Your name" />
+      <input id="guestCount" type="number" min="1" placeholder="Number of guests" />
+
+      <div class="rsvp-buttons">
+        <button onclick="submitRSVP('In Person')">I'll be there in person</button>
+        <button onclick="submitRSVP('Virtual')">I'll join virtually</button>
+        <button onclick="submitRSVP('Can’t attend')">Sending love from afar</button>
+      </div>
+
+      <p id="rsvpMessage" class="message"></p>
+    </section>
+
+    <section class="location-section">
+      <h2>Location</h2>
+      <p>Runnymede Pleasure Grounds, Egham</p>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Runnymede+Pleasure+Grounds+Egham" target="_blank">
+        Open in Google Maps
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love for Baby Cherry 🍒</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
