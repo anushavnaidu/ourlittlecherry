@@ -133,6 +133,7 @@ async function submitRSVP(status) {
 function revealOnScroll() {
   document.querySelectorAll(".reveal").forEach((item) => {
     const rect = item.getBoundingClientRect();
+
     if (rect.top < window.innerHeight - 80) {
       item.classList.add("visible");
     }

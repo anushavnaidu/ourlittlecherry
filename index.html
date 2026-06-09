@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <div class="petals" aria-hidden="true">
@@ -26,14 +26,27 @@
       <p class="intro">Anusha & Akshay invite you to celebrate a sweet little secret.</p>
 
       <div class="hero-card">
-        <div><small>Date</small><strong>Saturday, 13 June 2026</strong></div>
-        <div><small>Time</small><strong>5:00 PM onwards</strong></div>
-        <div><small>Venue</small><strong>Runnymede Pleasure Grounds</strong></div>
+        <div>
+          <small>Date</small>
+          <strong>Saturday, 13 June 2026</strong>
+        </div>
+        <div>
+          <small>Time</small>
+          <strong>5:00 PM onwards</strong>
+        </div>
+        <div>
+          <small>Venue</small>
+          <strong>Runnymede Pleasure Grounds</strong>
+        </div>
       </div>
 
-      <div class="dress">
-        <div class="dress-card boy"><span>🩵</span><h3>Team Boy</h3><p>Wear Blue</p></div>
-        <div class="dress-card girl"><span>🩷</span><h3>Team Girl</h3><p>Wear Pink</p></div>
+      <div class="dress-line">
+        <p class="dress-title">Dress Code</p>
+        <p class="dress-text">
+          <span class="boy-text">🩵 Team Boy: Wear Blue</span>
+          <span class="separator">•</span>
+          <span class="girl-text">🩷 Team Girl: Wear Pink</span>
+        </p>
       </div>
     </section>
   </header>
@@ -71,12 +84,18 @@
         </div>
 
         <div class="result">
-          <div class="result-label"><span>🩵 Team Boy</span><strong id="boyPercent">0%</strong></div>
+          <div class="result-label">
+            <span>🩵 Team Boy</span>
+            <strong id="boyPercent">0%</strong>
+          </div>
           <div class="bar"><div id="boyBar" class="boy-fill"></div></div>
         </div>
 
         <div class="result">
-          <div class="result-label"><span>🩷 Team Girl</span><strong id="girlPercent">0%</strong></div>
+          <div class="result-label">
+            <span>🩷 Team Girl</span>
+            <strong id="girlPercent">0%</strong>
+          </div>
           <div class="bar"><div id="girlBar" class="girl-fill"></div></div>
         </div>
 
@@ -97,7 +116,7 @@
     <section id="rsvp" class="glass-section rsvp-section reveal">
       <p class="section-kicker">Join the celebration</p>
       <h2>RSVP</h2>
-      <p class="muted">Let us know how you’ll be joining us.</p>
+      <p class="muted">Let us know if you’ll be joining us in person.</p>
 
       <div class="form-wrap">
         <input id="rsvpName" type="text" placeholder="Enter your name" />
@@ -105,7 +124,6 @@
 
         <div class="rsvp-buttons">
           <button onclick="submitRSVP('In Person')">I’ll be there in person</button>
-          <button onclick="submitRSVP('Virtual')">I’ll join virtually</button>
           <button onclick="submitRSVP('Can’t attend')">Sending love from afar</button>
         </div>
 
@@ -117,11 +135,16 @@
       <p class="section-kicker">Find us here</p>
       <h2>Location</h2>
       <p class="muted">Runnymede Pleasure Grounds, Egham</p>
-      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Runnymede+Pleasure+Grounds+Egham" target="_blank" rel="noreferrer">Open in Google Maps</a>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Runnymede+Pleasure+Grounds+Egham" target="_blank" rel="noreferrer">
+        Open in Google Maps
+      </a>
     </section>
   </main>
 
-  <footer><p>Made with love for Baby Cherry 🍒</p></footer>
-  <script src="script.js"></script>
+  <footer>
+    <p>Made with love for Baby Cherry 🍒</p>
+  </footer>
+
+  <script src="script.js?v=4"></script>
 </body>
 </html>
